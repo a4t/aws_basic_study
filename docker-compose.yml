@@ -1,0 +1,15 @@
+networks: {}
+version: '2.0'
+
+services:
+  terraform:
+    build:
+      context: ./
+      dockerfile: ./docker/terraform/Dockerfile
+    volumes:
+      - ./terraform:/terraform
+    env_file:
+      - ./config/aws.env
+      - ./config/target.env
+    environment:
+      - TF_VAR_region=ap-northeast-1

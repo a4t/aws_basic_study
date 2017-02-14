@@ -1,0 +1,6 @@
+# Docker
+config/aws.env
+config/target.env
+
+# Terraform
+terraform/master/*
