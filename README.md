@@ -12,6 +12,14 @@ config ディレクトリ内のenvファイルを各自、反映させること�
 
 target.env はシナリオの進行にあわせて変更してください。
 
+## スクリプト実行方法
+
+```
+$ docker-compose run terraform plan # 変更点の確認
+$ docker-compose run terraform apply　# 反映
+```
+
+
 ## シナリオの見方
 AWSの構築方法は全てTerraformで書かれています。
 
