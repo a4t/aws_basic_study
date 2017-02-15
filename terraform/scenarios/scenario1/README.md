@@ -72,22 +72,22 @@ IPには必ずネットワーク部とホスト部がある
 255.255.255.245 -> 11111111 11111111 11111111 11110101
 ```
 
-## 各chapterの説明
+# 各chapterの説明
 
-### chapter 1
+## chapter 1
 ![構成図](https://github.com/a4t/aws_basic_study/blob/master/terraform/scenarios/scenario1/images/chapter1.png "構成図")
 
 - VPCを作成
   - VPCを作成するということは仮想ネットワークを作成するということ
   - VPC間では基本的に通信ができないので、他のサービスに影響を受けることがない
 
-### chapter 2
+## chapter 2
 ![構成図](https://github.com/a4t/aws_basic_study/blob/master/terraform/scenarios/scenario1/images/chapter2.png "構成図")
 
 - Subnetを作成
   - Subnetを作成することで、サーバを立てた時に通信できるサーバ、できないサーバなど設計することができる(詳しくはchapter3)
 
-### chapter 3
+## chapter 3
 ![構成図](https://github.com/a4t/aws_basic_study/blob/master/terraform/scenarios/scenario1/images/chapter3.png "構成図")
 - Gatewayを作成
   - GatewayはAWSの中から外に通信するためのネットワークの出入り口
@@ -104,7 +104,7 @@ IPには必ずネットワーク部とホスト部がある
 - subnetをroute tableに紐付け
   - 作ったroute tableに対してsubnetを紐付けする
 
-### chapter 4
+## chapter 4
 ![構成図](https://github.com/a4t/aws_basic_study/blob/master/terraform/scenarios/scenario1/images/chapter4.png "構成図")
 - Security Groupの作成
   - Publicなところにサーバを立てるのであれば、アクセスできるIPと、アクセスできるPortの制限が必要
@@ -131,7 +131,7 @@ IPには必ずネットワーク部とホスト部がある
 - Privateの場所にEC2を作成
   - Publicサーバと同様
 
-### chapter 5
+## chapter 5
 - sshでPublicサーバ接続
   - Publicなので問題なく接続できる
   - Private側は接続できない
