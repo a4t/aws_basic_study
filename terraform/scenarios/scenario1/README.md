@@ -72,78 +72,81 @@ IPには必ずネットワーク部とホスト部がある
 255.255.255.245 -> 11111111 11111111 11111111 11110101
 ```
 
-## 各chapterの説明
+# 各chapterの説明
 
-### chapter 1
+## chapter 1
 ![構成図](https://github.com/a4t/aws_basic_study/blob/master/terraform/scenarios/scenario1/images/chapter1.png "構成図")
 
-- VPCを作成
-  - VPCを作成するということは仮想ネットワークを作成するということ
-  - VPC間では基本的に通信ができないので、他のサービスに影響を受けることがない
+### VPCを作成
+VPCを作成するということは仮想ネットワークを作成するということ
+VPC間では基本的に通信ができないので、他のサービスに影響を受けることがない
 
-### chapter 2
+## chapter 2
 ![構成図](https://github.com/a4t/aws_basic_study/blob/master/terraform/scenarios/scenario1/images/chapter2.png "構成図")
 
-- Subnetを作成
-  - Subnetを作成することで、サーバを立てた時に通信できるサーバ、できないサーバなど設計することができる(詳しくはchapter3)
+### Subnetを作成
+Subnetを作成することで、サーバを立てた時に通信できるサーバ、できないサーバなど設計することができる(詳しくはchapter3)
 
-### chapter 3
+## chapter 3
 ![構成図](https://github.com/a4t/aws_basic_study/blob/master/terraform/scenarios/scenario1/images/chapter3.png "構成図")
-- Gatewayを作成
-  - GatewayはAWSの中から外に通信するためのネットワークの出入り口
-  - これがないということは、インターネット回線を契約していない自宅のPCをイメージすると良い
-  - そしてインターネット回線に繋がっていないサーバは、AWS上にあっても接続できないので何もできない
+### Gatewayを作成
+GatewayはAWSの中から外に通信するためのネットワークの出入り口
+これがないということは、インターネット回線を契約していない自宅のPCをイメージすると良い
+そしてインターネット回線に繋がっていないサーバは、AWS上にあっても接続できないので何もできない
 
-- route tableを作成
-  - これはサブネットに対してネットワークのルールを適用するためにある
-  - 例えば https://www.google.co.jp/ にアクセスしたい場合どういった経路を通るかを指定することができる
-    - 今回の場合で言えばGatewayを作成したので、Gatewayを通ってGoogleにアクセスするという設定をすることになる
-  - そして外部と通信してほしくないサブネットに関しては、Gatewayと紐付けない
-    - そうすることでAWSの外からアクセスできないネットワークを作ることができる
+### route tableを作成
+これはサブネットに対してネットワークのルールを適用するためにある
 
-- subnetをroute tableに紐付け
-  - 作ったroute tableに対してsubnetを紐付けする
+- 例えば https://www.google.co.jp/ にアクセスしたい場合どういった経路を通るかを指定することができる
+  - 今回の場合で言えばGatewayを作成したので、Gatewayを通ってGoogleにアクセスするという設定をすることになる
 
-### chapter 4
+- そして外部と通信してほしくないサブネットに関しては、Gatewayと紐付けない
+  - そうすることでAWSの外からアクセスできないネットワークを作ることができる
+
+### subnetをroute tableに紐付け
+作ったroute tableに対してsubnetを紐付けする
+
+## chapter 4
 ![構成図](https://github.com/a4t/aws_basic_study/blob/master/terraform/scenarios/scenario1/images/chapter4.png "構成図")
-- Security Groupの作成
-  - Publicなところにサーバを立てるのであれば、アクセスできるIPと、アクセスできるPortの制限が必要
-    - IP制限やPort制限かけずに誰でもアクセスできるとリスクは高くなる
+### Security Groupの作成
+Publicなところにサーバを立てるのであれば、アクセスできるIPと、アクセスできるPortの制限が必要
+IP制限やPort制限かけずに誰でもアクセスできるとリスクは高くなる
 
-- Publicの場所にEC2を作成
-  - EC2ではOSがインストールされただけのまっさらな状態をベースに構築する
-    - Amazon Linux
-    - Red Hat Enterprise Linux
-    - Ubuntu
-    - Windows Server
+### Publicの場所にEC2を作成
+- EC2ではOSがインストールされただけのまっさらな状態をベースに構築する
+  - Amazon Linux
+  - Red Hat Enterprise Linux
+  - Ubuntu
+  - Windows Server
 
-  - スペックも選べる
-    - t2.nano    CPU:1,  Memory: 0.5G
-    - t2.small   CPU:1,  Memory: 1G
-    - c4.large   CPU:2,  Memory: 7,5G
-    - c4.8xlarge CPU:36, Memory: 60G
+- スペックも選べる
+  - t2.nano    CPU:1,  Memory: 0.5G
+  - t2.small   CPU:1,  Memory: 1G
+  - c4.large   CPU:2,  Memory: 7,5G
+  - c4.8xlarge CPU:36, Memory: 60G
 
-  - sshで接続するための鍵指定
-    - 最初に作成してもらった鍵はここで使用する
-      - ubuntuで言えば ssh ubuntu@[Public IP]
-      - AmazonZ Linuxはで ssh ec2-user@[Public IP]
+- sshで接続するための鍵指定
+  - 最初に作成してもらった鍵はここで使用する
+    - ubuntuで言えば ssh ubuntu@[Public IP]
+    - AmazonZ Linuxはで ssh ec2-user@[Public IP]
 
-- Privateの場所にEC2を作成
-  - Publicサーバと同様
+### Privateの場所にEC2を作成
+Publicサーバと同様
 
-### chapter 5
-- sshでPublicサーバ接続
-  - Publicなので問題なく接続できる
-  - Private側は接続できない
+## chapter 5
+### sshでPublicサーバ接続
+Publicなので問題なく接続できる
+Private側は接続できない
 
-- Nginxをインストールしてアクセス
-  - PublicサーバでNginxをインストールしてブラウザやcurlで接続してみる
+### Nginxをインストールしてアクセス
+PublicサーバでNginxをインストールしてブラウザやcurlで接続してみる
 
-- sshでPrivateサーバに接続してみる
-  - Publicサーバを経由しないと接続は絶対にできない
-    - 1. Gatewayと繋がっていない
-    - 2. たとえGatewayと繋がっていてもIP制限で入れない
+### sshでPrivateサーバに接続してみる
+Publicサーバを経由しないと接続は絶対にできない
 
-- Privateサーバで外部と接続してみる
-  - curl で yahoo.co.jp に接続してみる
-  - Publicサーバと同様の方法で、Nginxをインストールしてみる
+1. Gatewayと繋がっていない
+2. たとえGatewayと繋がっていてもIP制限で入れない
+
+### Privateサーバで外部と接続してみる
+- curl で yahoo.co.jp に接続してみる
+- Publicサーバと同様の方法で、Nginxをインストールしてみる
