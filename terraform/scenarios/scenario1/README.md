@@ -91,7 +91,9 @@ Subnetを作成することで、サーバを立てた時に通信できるサ�
 ![構成図](https://github.com/a4t/aws_basic_study/blob/master/terraform/scenarios/scenario1/images/chapter3.png "構成図")
 ### Gatewayを作成
 GatewayはAWSの中から外に通信するためのネットワークの出入り口
+
 これがないということは、インターネット回線を契約していない自宅のPCをイメージすると良い
+
 そしてインターネット回線に繋がっていないサーバは、AWS上にあっても接続できないので何もできない
 
 ### route tableを作成
@@ -110,6 +112,7 @@ GatewayはAWSの中から外に通信するためのネットワークの出入�
 ![構成図](https://github.com/a4t/aws_basic_study/blob/master/terraform/scenarios/scenario1/images/chapter4.png "構成図")
 ### Security Groupの作成
 Publicなところにサーバを立てるのであれば、アクセスできるIPと、アクセスできるPortの制限が必要
+
 IP制限やPort制限かけずに誰でもアクセスできるとリスクは高くなる
 
 ### Publicの場所にEC2を作成
@@ -136,6 +139,7 @@ Publicサーバと同様
 ## chapter 5
 ### sshでPublicサーバ接続
 Publicなので問題なく接続できる
+
 Private側は接続できない
 
 ### Nginxをインストールしてアクセス
@@ -145,6 +149,7 @@ PublicサーバでNginxをインストールしてブラウザやcurlで接続�
 Publicサーバを経由しないと接続は絶対にできない
 
 1. Gatewayと繋がっていない
+
 2. たとえGatewayと繋がっていてもIP制限で入れない
 
 ### Privateサーバで外部と接続してみる
