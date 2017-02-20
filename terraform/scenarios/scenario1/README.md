@@ -156,3 +156,24 @@ Publicサーバを経由しないと接続は絶対にできない
 ### Privateサーバで外部と接続してみる
 - curl で yahoo.co.jp に接続してみる
 - Publicサーバと同様の方法で、Nginxをインストールしてみる
+
+## chapter 6
+現実の物理的な物で考える
+
+### VPCを作る
+![構成図](https://github.com/a4t/aws_basic_study/blob/master/terraform/scenarios/scenario1/images/real_1.png "構成図")
+
+### Subnetを作る
+![構成図](https://github.com/a4t/aws_basic_study/blob/master/terraform/scenarios/scenario1/images/real_2.png "構成図")
+
+### サーバを立てる
+![構成図](https://github.com/a4t/aws_basic_study/blob/master/terraform/scenarios/scenario1/images/real_3.png "構成図")
+
+### ルーティングする
+![構成図](https://github.com/a4t/aws_basic_study/blob/master/terraform/scenarios/scenario1/images/real_4.png "構成図")
+
+### AWSに当てはめる
+![構成図](https://github.com/a4t/aws_basic_study/blob/master/terraform/scenarios/scenario1/images/real_5.png "構成図")
+
+### 新しいSubnetを作成する
+![構成図](https://github.com/a4t/aws_basic_study/blob/master/terraform/scenarios/scenario1/images/real_6.png "構成図")
