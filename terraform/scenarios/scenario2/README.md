@@ -15,6 +15,7 @@ Availability Zoneはサービスの可用性を上げるために使用されま
 ![構成図](https://github.com/a4t/aws_basic_study/blob/master/terraform/scenarios/scenario2/images/real_3.png "構成図")
 
 # 各chapterの説明
+基本的にシナリオ1と同じなので、わからない単語などがあったらシナリオ1を参照すること
 
 ## chapter 1
 ![構成図](https://github.com/a4t/aws_basic_study/blob/master/terraform/scenarios/scenario2/images/chapter1.png "構成図")
