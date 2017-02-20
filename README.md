@@ -35,12 +35,12 @@ terraform/scenarios 内に シナリオ番号とチャプターがあります�
 
 ## 各シナリオについて
 
-### シナリオ 1
+### [シナリオ 1](https://github.com/a4t/aws_basic_study/tree/master/terraform/scenarios/scenario1)
 Public と Private の領域にサーバを一つずつ置いて各役割を確認
 
 ![構成図](https://github.com/a4t/aws_basic_study/blob/master/terraform/scenarios/scenario1/images/chapter4.png "構成図")
 
-### シナリオ 2
+### [シナリオ 2](https://github.com/a4t/aws_basic_study/tree/master/terraform/scenarios/scenario2)
 Availability Zone を使った障害対策
 
 ![構成図](https://github.com/a4t/aws_basic_study/blob/master/terraform/scenarios/scenario2/images/chapter4.png "構成図")
