@@ -19,6 +19,7 @@ target.env はシナリオの進行にあわせて変更してください。
 ## スクリプト実行方法
 
 ```
+$ docker-compose build # イメージ作成
 $ docker-compose run terraform plan # 変更点の確認
 $ docker-compose run terraform apply　# 反映
 ```
