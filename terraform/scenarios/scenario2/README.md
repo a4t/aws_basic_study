@@ -39,7 +39,7 @@ Availability Zoneはサービスの可用性を上げるために使用されま
 今回は複数のSubnetが一つのRoute Tableに入っている
 
 ## chapter 4
-![構成図](https://github.com/a4t/aws_basic_study/blob/master/terraform/scenarios/scenario1/images/chapter4.png "構成図")
+![構成図](https://github.com/a4t/aws_basic_study/blob/master/terraform/scenarios/scenario2/images/chapter4.png "構成図")
 
 ### Security Groupの作成
 ### Publicの場所にEC2を作成
