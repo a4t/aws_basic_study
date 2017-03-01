@@ -34,7 +34,7 @@ EC2のインスタンスをどのような設定で立ち上げるかを設定�
 - sshの接続鍵
 - 起動スクリプトの設定
 
-今回はNginxをインストールして /ping に応答するサーバを作成する
+今回は起動スクリプトでNginxをインストールして http://[Public IP]/ に応答するサーバを作成する
 
 ### Auto Scaling Group と Launch Configurationの関係
 どのようなインスタンスを(Launch Configuration)
@@ -66,6 +66,7 @@ ELBを作成する、LoadBalancer
 
 ### Health Check
 httpでアクセスして、200が返ってきたらそのサーバは正常に稼働と判断してELBに紐付ける
+
 200以外を返す場合はサーバにトラブルが発生しているものとしてELBから切り離す
 
 ### Listeners
