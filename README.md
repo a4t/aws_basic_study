@@ -46,9 +46,10 @@ Availability Zone を使った障害対策
 
 ![構成図](https://github.com/a4t/aws_basic_study/blob/master/terraform/scenarios/scenario2/images/chapter4.png "構成図")
 
-
-### シナリオ 3
+### [シナリオ 3](https://github.com/a4t/aws_basic_study/tree/master/terraform/scenarios/scenario3)
 ELBを使ったWebサーバ分散パターン
+
+![構成図](https://github.com/a4t/aws_basic_study/blob/master/terraform/scenarios/scenario3/images/chapter4.png "構成図")
 
 ### シナリオ 4
 IAM Roleを使ったAWSリソースの権限管理
