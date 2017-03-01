@@ -16,7 +16,7 @@ resource "aws_launch_configuration" "app" {
 }
 
 resource "aws_autoscaling_group" "ag" {
-  name = "aws-basic-study-${var.envname}-public"
+  name = "aws-basic-study-${var.envname}-app"
   availability_zones        = ["${var.availability_zone}"]
   vpc_zone_identifier       = ["${aws_subnet.public.id}"]
   max_size                  = "0"
